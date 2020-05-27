@@ -13,10 +13,10 @@ echo "Attempting to update kubeconfig for aws"
 
 aws eks --region "$INPUT_AWS_REGION" update-kubeconfig --name "$INPUT_CLUSTER_NAME"
 
-echo "Attempting to run provided inline command"
+echo "Attempting to run provided command"
 echo '' >> ~/script.sh
 echo '# Commands:' >> ~/script.sh
-echo "${INPUT_INLINE-COMMAND}" >> ~/script.sh
+echo "${INPUT_COMMAND}" >> ~/script.sh
 
 sh ~/script.sh
 
