@@ -13,7 +13,7 @@ RUN mv ./kubectl /usr/local/bin/kubectl
 
 RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 RUN chmod 700 get_helm.sh
-RUN ./get_helm.sh
+RUN sh get_helm.sh
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
